@@ -9,7 +9,7 @@ function HomepagePosts({posts}) {
     Recent Blog Articles
     </h1>
     <div className='flex justify-around'>
-    {posts.map(post => (
+    {posts?.map(post => (
       <Link key={post._id} href={`/blog/${post.slug.current}`}>
       
       <div className="block rounded-lg shadow-lg bg-white w-1/4 text-center border-2 border-amber-500 hover:shadow-2xl transition-all ease-in-out">
