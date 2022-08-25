@@ -5,9 +5,14 @@ import ImageHeader from './components/ImageHeader'
 import Navbar from './components/Navbar'
 import WhoWeAre from './components/WhoWeAre.js'
 import Events from './components/Events'
+import HomepagePosts from './components/HomepagePosts'
 import { useState, useEffect, useRef } from 'react'
+import { sanityClient } from '../sanity'
+import Announcements from './components/Announcements'
 
-export default function Home() {
+
+export default function Home({ posts }) {
+  console.log(posts)
   return (
     <div className={styles.container}>
       <Head>
@@ -20,6 +25,8 @@ export default function Home() {
       <ImageHeader />
       <WhoWeAre />
       <Events/>
+      <HomepagePosts posts={posts} />
+      <Announcements />
       </div>
 
       <footer className={styles.footer}>
@@ -36,4 +43,25 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export const getServerSideProps = async () => {
+  const query = `*[_type == "post"]{
+    _id,
+    title,
+    author-> {
+    name
+  },
+    description,
+    slug,
+    publishedAt
+  }`;
+
+  const posts = await sanityClient.fetch(query)
+
+  return {
+    props: {
+      posts
+    }
+  }
 }

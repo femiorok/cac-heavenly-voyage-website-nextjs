@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import caclogo from '/public/caclogo.png'
 import Link from 'next/link'
+import Announcements from './Announcements';
 
 export default function Navbar() {
   return (
@@ -14,8 +15,9 @@ export default function Navbar() {
         <li className='px-4 font-medium hover:text-amber-500 hover:underline transition-all'><Link href='/'>Home</Link></li>
         <li className='px-4 font-medium hover:text-amber-500 hover:underline transition-all'><Link href='/#aboutus'>About Us</Link></li>
         <li className='px-4 font-medium hover:text-amber-500 hover:underline transition-all'><Link href='/we-believe'>Our Beliefs</Link></li>
-        <li className='px-4 font-medium hover:text-amber-500 hover:underline transition-all'>Blog</li>
+        <li className='px-4 font-medium hover:text-amber-500 hover:underline transition-all'><Link href='/blog'>Blog</Link></li>
         <li className='px-4 font-medium hover:text-amber-500 hover:underline transition-all'><Link href='/#events'>Join Us</Link></li>
+        <li className='px-4 font-medium hover:text-amber-500 hover:underline transition-all'><Link href='/#announcements'>Announcements</Link></li>
         </div>
       </ul>
     </div>

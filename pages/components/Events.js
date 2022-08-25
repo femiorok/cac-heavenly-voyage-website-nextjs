@@ -49,7 +49,7 @@ const Events = () => {
             <Image src={cross_bg} height={25}/>
           </div>
           <div className="w-48 text-center text-2xl h-12">
-            <h2>Church Address!</h2>
+            <h2>Church Address</h2>
           </div>
           <div className="w-48 flex flex-col justify-center text-center h-20">
             <p>2700 Little Mountain Rd. San Bernardino, CA 92405</p>
@@ -64,7 +64,7 @@ const Events = () => {
             <Image src={cross_bg} height={25}/>
           </div>
           <div className="w-48 text-center text-2xl h-12">
-            <h2>Phone Line</h2>
+            <h2>Conference Line</h2>
           </div>
           <div className="w-48 flex flex-col justify-center text-center h-20">
             <p>(774)220-4000 | Passcode: 7179122</p>
